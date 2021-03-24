@@ -3,7 +3,8 @@ FROM continuumio/miniconda3
 ARG WITH_CGAL_BACKEND=OFF
 
 # Configure as a web server 
-RUN apt-get install -q -y  \
+RUN apt-get update \
+   && apt-get install -q -y  \
     apache2 \
     unzip \
     && apt-get clean
@@ -25,6 +26,7 @@ RUN /opt/conda/bin/conda install  gcc_linux-64\
 
 RUN /opt/conda/bin/conda install -c conda-forge -y xeus-cling=0.9.0=he513fc3_0 \
     gdal \
+    libwebp \
     geographiclib \
     awscli \
     doxygen
