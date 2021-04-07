@@ -30,11 +30,12 @@ jobs:
             mkdir BUILD && cd BUILD 
             cmake .. 
             make && make test && sudo make install
-        - name: build movetk
+        - name: build movetk and run tests
           run: |
             export LIBRARY_PATH=/usr/local/lib/ 
             echo $LIBRARY_PATH 
             ./ci.sh
+            ctest -VV
         - uses: actions/upload-artifact@v2
           with:
             name: RPM package
