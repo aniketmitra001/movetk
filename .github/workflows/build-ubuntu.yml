@@ -2,7 +2,7 @@ name: MoveTK-CI-Ubuntu
 
 on:
   push:
-    branches: [ master ]
+    branches: [ run-unit-tests-ci ]
   pull_request:
     branches: [ master ]
 
