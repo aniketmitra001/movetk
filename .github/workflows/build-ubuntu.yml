@@ -34,6 +34,7 @@ jobs:
           run: |
             export LIBRARY_PATH=/usr/local/lib/ 
             echo $LIBRARY_PATH 
+            ls -lrt /usr/local/lib/libGeo*
             ./ci.sh
         - uses: actions/upload-artifact@v2
           with:
